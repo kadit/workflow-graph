@@ -1,0 +1,10 @@
+<li class="node">
+    <div *ngIf="node.name" class="node-control">
+        <div class="node-name">
+            <span>{{node.name}}</span>
+        </div>
+    </div>
+    <ng-container *ngFor="let box of node.boxes">
+        <app-box [box]="box"></app-box>
+    </ng-container>
+</li>

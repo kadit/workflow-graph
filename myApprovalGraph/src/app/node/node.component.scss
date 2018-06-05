@@ -1,0 +1,16 @@
+li {
+    list-style-type: none;
+    display: block;
+    padding: 0;
+    border: 1px solid #000;
+    border-top: none;
+    .node-control {
+        padding: 30px;
+        margin-bottom: -68px;
+        .node-name {
+            background-color: #d6d6d6;
+            margin: 20px;
+            padding: 10px;
+        }
+    }
+}

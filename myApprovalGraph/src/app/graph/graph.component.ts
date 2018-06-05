@@ -1,0 +1,17 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-graph',
+  templateUrl: './graph.component.html',
+  styleUrls: ['./graph.component.scss']
+})
+export class GraphComponent implements OnInit {
+
+  data = {"boxes":[{"nodes":[{"name":"Node 1"}]},{"nodes":[{"name":"Node 2"},{"name":"Node 3"},{"boxes":[{"nodes":[{"name":"Node 4","boxes":[]}]},{"nodes":[{"name":"Node 5","boxes":[]}]}]}]},{"nodes":[{"name":"Node 6"}]},{"nodes":[{"name":"Node 7"},{"name":"Node 8"}]}]};
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}

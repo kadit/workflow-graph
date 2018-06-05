@@ -1,14 +1,14 @@
-ul{
-    padding:10% 0; 
-    margin:0; 
-    
+ul {
+    padding: 10% 0;
+    margin: 0;
 }
-ul li{
-    list-style-type:none;
+
+ul li {
+    list-style-type: none;
     height: 120px;
 }
 
-ul input{
+ul input {
     margin-left: 10%;
     display: inline;
     width: 220px;
@@ -16,93 +16,93 @@ ul input{
     font-size: 20px;
     text-align: center;
 }
-ul label{
+
+ul label {
     margin-left: 10%;
     display: inline;
 }
 
-.panel{
+.panel {
     float: left;
-    
 }
 
-.borderRight{
+.borderRight {
     border-right: 2px solid #b9b9bd
 }
 
-.borderLeft{
+.borderLeft {
     border-left: 2px solid #b9b9bd
 }
 
-.borderTop{
-    border-top : 2px solid #b9b9bd
+.borderTop {
+    border-top: 2px solid #b9b9bd
 }
 
-.borderBottom{
-    border-bottom : 2px solid #b9b9bd
+.borderBottom {
+    border-bottom: 2px solid #b9b9bd
 }
 
-.btnColor{
-    color : #b7c2e4;
+.btnColor {
+    color: #b7c2e4;
 }
 
-.parallelTop{
+.parallelTop {
     position: relative;
     bottom: 43px;
     left: 266px;
-} 
+}
 
- .parallelBottom{
+.parallelBottom {
     position: relative;
     top: 40px;
     right: 157px;
-} 
-
-.innerDiv{
-    height:50px;
 }
 
-.endPanel{
-    width:3%;
+.innerDiv {
+    height: 50px;
+}
+
+.endPanel {
+    width: 3%;
     float: left;
 }
 
-.endLi{
+.endLi {
     border-bottom: 2px solid #b9b9bd;
 }
 
-.beginLabel{
+.beginLabel {
     position: relative;
     top: 106px;
     margin-left: 0% !important;
 }
 
-.endLabel{
+.endLabel {
     position: relative;
     top: 86px;
     left: 47px;
 }
-.seriesBtn{
+
+.seriesBtn {
     position: relative;
     top: 113px;
-    
 }
 
-.endLabelColor{
+.endLabelColor {
     color: #3ac340;
 }
 
-.seriesFirst{
+.seriesFirst {
     position: relative;
     left: 36px;
 }
 
-.beginLabelColor{
+.beginLabelColor {
     color: #3ac340;
     background-color: white;
 }
 
-::placeholder { 
+::placeholder {
     color: #dadfe2;
-    opacity: 1; 
+    opacity: 1;
 }

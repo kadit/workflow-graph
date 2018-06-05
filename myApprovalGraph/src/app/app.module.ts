@@ -6,13 +6,19 @@ import { AppComponent } from './app.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { Ng2CompleterModule } from "ng2-completer";
 import { TypeaheadDirective } from './typeahead.directive';
+import { GraphComponent } from './graph/graph.component';
+import { NodeComponent } from './node/node.component';
+import { BoxComponent } from './box/box.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TypeaheadDirective
+    TypeaheadDirective,
+    GraphComponent,
+    NodeComponent,
+    BoxComponent
   ],
   imports: [
     BrowserModule,
