@@ -1,0 +1,25 @@
+<ul class="endPanel">
+  <li class="endLi" [ngStyle] = "{'margin-top': getConnectionOffsetsForEndNodes()+'px'}" >
+      <label class="beginLabel"><i class="fa fa-play-circle-o fa-2x beginLabelColor" aria-hidden="true"></i></label>
+  </li>
+</ul>
+<ul class="panel" *ngFor="let ar of strArray; let i = index;" [ngStyle] = "{'width': getPanelWidth(i)+'%'}" >
+  <li *ngFor="let e of ar; let j= index;" [ngStyle] = "{'margin-top': getConnectionOffsets(i,j)+'px'}" 
+      [ngClass]= "{'borderRight':getLiBorder('R',i,j),'borderLeft':getLiBorder('L',i,j),'borderBottom':getLiBorder('B',i,j),'borderTop':getLiBorder('T',i,j)}">
+        <span *ngFor="let s of e; let k= index;">
+            <button class="parallelTop" [style.visibility]="s.allowSeriesAddition ? 'visible' : 'hidden'" (click)="deleteNode(i,j,k)"><i class="fa fa-trash btnColor" aria-hidden="true"></i></button>
+            <input  appTypeahead placeholder="Enter name" (mouseenter)="handleHover(i,j,k)"  *ngIf = "!s.isConcrete" type="text" [ngStyle] = "{'margin-top': offSets[i]+'px'}" value="{{s.name}}"/> 
+            <input  appTypeahead placeholder="Enter name" (mouseenter)="handleHover(i,j,k)"  *ngIf = "s.isConcrete" type="text" readOnly [ngStyle] = "{'margin-top': offSets[i]+'px'}" value="{{s.name}}"/> 
+            <button [style.visibility]="s.allowSeriesAddition ? 'visible' : 'hidden'" (click)="addSeriesNode(i,j,k)"><i class="fa fa-plus btnColor" aria-hidden="true"></i></button>
+            <button class="parallelBottom" [style.visibility]="s.allowParallelAddition ? 'visible' : 'hidden'" (click)="addParallelNode(i,j,'B')"><i class="fa fa-plus btnColor" aria-hidden="true"></i></button> 
+        </span>
+        
+  </li>
+</ul>
+
+<ul class="endPanel">
+    <li class="endLi" [ngStyle] = "{'margin-top': getConnectionOffsetsForEndNodes()+'px'}" >
+        <button class="seriesBtn" (click)="addSeriesNode()"><i class="fa fa-plus btnColor" aria-hidden="true"></i></button>
+        <label class="endLabel"><i class="fa fa-check fa-2x endLabelColor" aria-hidden="true"></i></label>
+    </li>
+</ul>
