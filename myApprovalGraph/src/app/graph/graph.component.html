@@ -1,47 +1,21 @@
-
-<!--div class="cnt">
-    <ng-container *ngFor="let box of data.boxes">
-        <app-box [box]="box"></app-box>
-    </ng-container>
-</div-->
-
 <ul class="box" *ngFor="let box of data.boxes; let _index = index">
     <li class="node" 
     [class.no-right-border]="data.boxes[_index + 1] && box.nodes.length < data.boxes[_index + 1].nodes.length" 
     [class.no-left-border]="data.boxes[_index - 1] && box.nodes.length < data.boxes[_index - 1].nodes.length"
-    *ngFor="let node of box.nodes">
-        <div *ngIf="node.name" class="node-control">
-            <!--div class="node-name" [class.mouse-on-node]="mouseOvered" (mouseout)="mouseOvered=false" (mouseover)="mouseOvered=true">
-                <i class="fa fa-trash af-icon"></i>
-                <input type="text" class="form-control" [attr.value]="node.name">
-                <span class="add-node">
-                    <i class="fa fa-plus-circle top af-icon"></i>
-                    <i class="fa fa-plus-circle right af-icon"></i>
-                    <i class="fa fa-plus-circle bottom af-icon"></i>
-                    <i class="fa fa-plus-circle left af-icon"></i>
-                </span>
-            </div-->
-            <app-node [node]="node"></app-node>
-        </div>
-
+    *ngFor="let node of box.nodes; let liIndex = index">
         
+        <div *ngIf="node.name" class="node-control">
+            <app-node [node]="node" [nodeIndex]="liIndex" [box]="box"></app-node>
+        </div> 
+
         <ul class="box" *ngFor="let _box of node.boxes">
-            <li class="node inner-node" *ngFor="let _node of _box.nodes">
+            <li class="node inner-node" *ngFor="let _node of _box.nodes; let _liIndex = index">
                 <div *ngIf="_node.name" class="node-control">
-                    <!--div class="node-name" [class.mouse-on-node]="mouseOvered" (mouseout)="mouseOvered=false" (mouseover)="mouseOvered=true">
-                        <i class="fa fa-trash af-icon"></i>
-                        <input type="text" class="form-control" [attr.value]="_node.name">
-                        <span class="add-node">
-                            <i class="fa fa-plus-circle top af-icon"></i>
-                            <i class="fa fa-plus-circle right af-icon"></i>
-                            <i class="fa fa-plus-circle bottom af-icon"></i>
-                            <i class="fa fa-plus-circle left af-icon"></i>
-                        </span>
-                    </div-->
-                    <app-node [node]="_node"></app-node>
+                    <app-node [node]="_node" [nodeIndex]="_liIndex" [box]="_box"></app-node>
                 </div>
             </li>
         </ul>
+
     </li>
 </ul>
     

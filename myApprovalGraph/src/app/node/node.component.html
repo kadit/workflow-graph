@@ -1,11 +1,15 @@
 <div class="node-name" [class.mouse-on-node]="mouseOvered" (mouseout)="mouseOvered=false" (mouseover)="mouseOvered=true">
-    <i class="fa fa-trash af-icon"></i>
+    <i class="fa fa-trash af-icon" (click)="removeNode()"></i>
     <!--input type="text" class="form-control" [attr.value]="node.name" -->
-    <af-typeahead (searchEvent)="search($event)" (selectEvent)="search($event)"  [options]="options"></af-typeahead>
+    <span [hidden]="showNodeName != 'true'" class="node-label">
+        {{node.name}}
+        <i class="fa fa-remove" (click)="clearNode()"></i>
+    </span>
+    <af-typeahead [hidden]="showNodeName == 'true'" (searchEvent)="search($event)" (selectEvent)="select($event)"  [options]="options"></af-typeahead>
     <span class="add-node">
-        <i class="fa fa-plus-circle top af-icon"></i>
-        <i class="fa fa-plus-circle right af-icon"></i>
-        <i class="fa fa-plus-circle bottom af-icon"></i>
-        <i class="fa fa-plus-circle left af-icon"></i>
+        <i class="fa fa-plus-circle top af-icon" (click)="addNode('top')"></i>
+        <i class="fa fa-plus-circle right af-icon" (click)="addNode('right')"></i>
+        <i class="fa fa-plus-circle bottom af-icon" (click)="addNode('bottom')"></i>
+        <i class="fa fa-plus-circle left af-icon" (click)="addNode('left')"></i>
     </span>
 </div>

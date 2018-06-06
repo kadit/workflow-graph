@@ -141,17 +141,10 @@ export class TypeaheadComponent implements OnInit, OnChanges {
   }
 
   selectItem(item: any) {
-    this.searchTerm = item[this.labelField];
-    if (!this.noResultsFound) {
-      this.selectEvent.emit(item);
-      this.searchTerm = '';
-      if (this.inputSearch && this.inputSearch.nativeElement) {
-        this.inputSearch.nativeElement.focus();
-      }
-    }
-    if (this.showSelectedInInput) {
-      this.searchTerm = this.filterMdsSelectedData(item, this.labelField);
-    }
+    this._options.length = 0;
+    this.searchTerm = item;
+    this.selectEvent.emit(item);
+    this.searchTerm = '';
   }
 
   emptySearchResults(): void {

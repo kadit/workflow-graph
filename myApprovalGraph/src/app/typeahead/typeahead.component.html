@@ -17,9 +17,6 @@
         </a>
         <a [hidden]="!noResultsFound" href="javascript:void(0)" class="dropdown-item" (click)="emptySearchResults()">{{options[0]}}</a>
       </div>
-      <ng-container
-        *ngTemplateOutlet="typeAheadOptions?typeAheadOptions:''">
-      </ng-container>
     </div>
 </div>
 

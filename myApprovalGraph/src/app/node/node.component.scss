@@ -3,7 +3,6 @@
     display: block;
     top: 56px;
     position: absolute;
-    z-index: 9;
     padding: 19px;
     .fa-trash {
         top: 0;
@@ -28,6 +27,23 @@
         }
         .bottom {
             bottom: 0;
+        }
+    }
+    .node-label{
+        font-size: 12px;
+        background-color: #fff;
+        display: inline-block;
+        border: 1px solid #000;
+        width: 142px;
+        height: 46px;
+        vertical-align: middle;
+        overflow: hidden;
+        line-height: 21px;
+        i{
+            cursor: pointer;
+            position: absolute;
+            top: 22px;
+            right: 21px;
         }
     }
 }

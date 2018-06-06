@@ -8,9 +8,13 @@ import { Http } from '@angular/http';
 })
 export class NodeComponent implements OnInit {
 
-  @Input()
-  node: any;
+  @Input() node: any;
+  @Input() nodeIndex: number;
+  @Input() box: any;
+
   options: Array<string> = [];
+  showNodeName = 'false';
+  mouseOvered = undefined;
 
   constructor(private http: Http) { }
 
@@ -19,16 +23,46 @@ export class NodeComponent implements OnInit {
 
   //Search method
   search(searchTerm) {
-    console.log(searchTerm);
-    //service should fetch data here, google api is used for demo
-    /*const data: any = this.http.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${searchTerm}`)
-      .map(res => res.json());
-
-    data.subscribe(response => {
-      this.options = response.results && response.results[0].address_components.map(i=>i.short_name);
-      console.log(this.options, response);
-    });*/
     this.options = ["Bang, Bocaranga, République Centrafricaine", "Bang, Koui, République Centrafricaine", "Bang, Koui, République Centrafricaine", "Bang, Ngaoundaye, République Centrafricaine", "Bang, Delanga, OD, India", "Bang, Iran", "Bang, Mondol Kiri, Cambodia", "Bang, Stjørdal, Trøndelag, Norge", "Bang, Kakri, Rapti, Nepal", "Bang, Al Mabien, Upper Nile, South Sudan"]
+  }
+
+  select(nodeName) {
+    this.node.name = nodeName;
+    this.options = [];
+    this.showNodeName = 'true';
+    this.mouseOvered = undefined;
+  }
+
+  clearNode() {
+    this.showNodeName = 'false';
+    this.mouseOvered = undefined;
+  }
+
+  addNode(where: 'left' | 'right' | 'top' | 'bottom') {
+    switch (where) {
+      case 'top':
+        this.box.nodes.splice(this.nodeIndex ? this.nodeIndex - 1 : 0, 0, { "name": "Node " + Date.now() });
+        break;
+
+      case 'bottom':
+        this.box.nodes.splice(this.nodeIndex + 1, 0, { "name": "Node " + Date.now() });
+        break;
+
+      case 'left':
+
+        break;
+
+      case 'right':
+
+        break;
+
+      default:
+        break;
+    }
+  }
+
+  removeNode() {
+    this.box.nodes.splice(this.nodeIndex, 1);
   }
 
 }
