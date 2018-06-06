@@ -1,10 +1,11 @@
-<li class="node">
-    <div *ngIf="node.name" class="node-control">
-        <div class="node-name">
-            <span>{{node.name}}</span>
-        </div>
-    </div>
-    <ng-container *ngFor="let box of node.boxes">
-        <app-box [box]="box"></app-box>
-    </ng-container>
-</li>
+<div class="node-name" [class.mouse-on-node]="mouseOvered" (mouseout)="mouseOvered=false" (mouseover)="mouseOvered=true">
+    <i class="fa fa-trash af-icon"></i>
+    <!--input type="text" class="form-control" [attr.value]="node.name" -->
+    <af-typeahead (searchEvent)="search($event)" (selectEvent)="search($event)"  [options]="options"></af-typeahead>
+    <span class="add-node">
+        <i class="fa fa-plus-circle top af-icon"></i>
+        <i class="fa fa-plus-circle right af-icon"></i>
+        <i class="fa fa-plus-circle bottom af-icon"></i>
+        <i class="fa fa-plus-circle left af-icon"></i>
+    </span>
+</div>

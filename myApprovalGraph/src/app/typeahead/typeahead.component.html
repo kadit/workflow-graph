@@ -1,0 +1,25 @@
+<div class="dropdown" [ngClass]="widgetSize" (closeDropdown)="emptySearchResults()">
+    <div class="input-group">
+        <input [(ngModel)]="searchTerm" 
+        class="dropdown-toggle search-term icon-search icon-large form-control" 
+        type="text" #inputSearch placeholder="{{promptText}}" 
+        aria-haspopup="true" aria-expanded="false" [disabled]="isTypeAheadDisabled" 
+        (focus)="emptySearchResults()" (focusout)="resetLoading()">
+        <i class="search-icon" [class.loading-icon]="showLoadingIcon"></i>
+    </div>
+
+    <div [hidden]="options.length < 1" class="typeahead dropdown-menu">
+      <div class="dropdown-container">
+        <a [hidden]="noResultsFound" href="javascript:void(0)" 
+        class="dropdown-item" *ngFor="let item of options" (click)="selectItem(item)">{{item}}</a>
+        <a class="dropdown-item-warning" *ngIf="isLimitExceeded">
+          <i class="icon-message-warning"></i> {{limitExceededMessage}}
+        </a>
+        <a [hidden]="!noResultsFound" href="javascript:void(0)" class="dropdown-item" (click)="emptySearchResults()">{{options[0]}}</a>
+      </div>
+      <ng-container
+        *ngTemplateOutlet="typeAheadOptions?typeAheadOptions:''">
+      </ng-container>
+    </div>
+</div>
+

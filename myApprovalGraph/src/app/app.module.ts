@@ -9,6 +9,7 @@ import { TypeaheadDirective } from './typeahead.directive';
 import { GraphComponent } from './graph/graph.component';
 import { NodeComponent } from './node/node.component';
 import { BoxComponent } from './box/box.component';
+import { TypeaheadComponent } from './typeahead/typeahead.component';
 
 
 
@@ -18,7 +19,8 @@ import { BoxComponent } from './box/box.component';
     TypeaheadDirective,
     GraphComponent,
     NodeComponent,
-    BoxComponent
+    BoxComponent,
+    TypeaheadComponent
   ],
   imports: [
     BrowserModule,
