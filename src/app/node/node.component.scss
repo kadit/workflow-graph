@@ -42,8 +42,9 @@
         line-height: 40px;
         border-width: 3px 1px 1px 2px;
         border-color: #c5c4c4;
+        outline: none;
         &:focus{
-            border-color: #007bff;
+            border-color: #1a73d2;
         }
         i{
             cursor: pointer;
