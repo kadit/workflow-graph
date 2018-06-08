@@ -1,7 +1,6 @@
 <div class="node-name" [class.mouse-on-node]="mouseOvered" (mouseout)="mouseOvered=false" (mouseover)="mouseOvered=true">
     <i class="fa fa-trash af-icon" (click)="removeNode()"></i>
-    <!--input type="text" class="form-control" [attr.value]="node.name" -->
-    <span [hidden]="showNodeName != 'true'" class="node-label">
+    <span tabindex="0" [title]="node.name" [hidden]="showNodeName != 'true'" class="node-label">
         {{node.name}}
         <i class="fa fa-remove" (click)="clearNode()"></i>
     </span>

@@ -15,7 +15,7 @@ ul.box {
             padding: 0 19px;
             min-width: 220px;
             position: relative;
-             .node-name {
+            .node-name {
                 background-color: #d6d6d6;
                 width: 180px;
                 display: block;
@@ -78,4 +78,29 @@ ul.box {
         background-color: #fff;
         border-radius: 50%;
     }
+}
+
+.play,
+.done {
+    position: absolute;
+    top: 77px;
+    background: #fff;
+    color: #48da26;
+    border-radius: 50%;
+    padding: 5px;
+    width: 45px;
+    border: 1px solid #eaeaea;
+}
+
+.play {
+    left: 0;
+}
+
+.done {
+    right: -30px;
+}
+
+.startNode,
+.endNode {
+    width: 80px;
 }

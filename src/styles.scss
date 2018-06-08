@@ -37,9 +37,9 @@ ul.box {
     li.node.no-left-border {
         border-left: none !important;
     }
-    li.inner-node {
+    /*li.inner-node {
         border: none !important;
-    }
+    }*/
     .af-icon {
         position: absolute;
         color: #b5b5b5;
@@ -59,4 +59,9 @@ ul.box {
 
 .node-name input {
     height: 50px !important;
+}
+
+li.node {
+    border-color: #6c757d !important;
+    border-width: 0.1rem !important;
 }

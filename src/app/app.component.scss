@@ -1,3 +1,14 @@
+.graph-container {
+    width: 95%;
+    height: auto;
+    overflow-y: scroll;
+    overflow-x: visible;
+    app-graph {
+        width: 1800px;
+        display: block;
+    }
+}
+
 ul {
     padding: 10% 0;
     margin: 0;

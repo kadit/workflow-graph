@@ -8,7 +8,6 @@ import { Ng2CompleterModule } from "ng2-completer";
 import { TypeaheadDirective } from './typeahead.directive';
 import { GraphComponent } from './graph/graph.component';
 import { NodeComponent } from './node/node.component';
-import { BoxComponent } from './box/box.component';
 import { TypeaheadComponent } from './typeahead/typeahead.component';
 
 
@@ -19,7 +18,6 @@ import { TypeaheadComponent } from './typeahead/typeahead.component';
     TypeaheadDirective,
     GraphComponent,
     NodeComponent,
-    BoxComponent,
     TypeaheadComponent
   ],
   imports: [

@@ -4,6 +4,8 @@
     padding: 3px 5px;
     border-radius: 0px;
     box-shadow: none;
+    border-width: 3px 1px 1px 2px;
+    border-color: #03A9F4;
 }
 
 // .search-icon:after {
@@ -21,7 +23,6 @@
 //     top: 8px;
 //     z-index: 2;
 // }
-
 .loading-icon:after {
     content: url('data:image/gif;base64,R0lGODlhFAAUAOMNANTQyECIuLO/w4ytv6m7w5mzwV+XunGfvL3ExcTHxay8w1GPuUGIuP///////////yH/C05FVFNDQVBFMi4wAwEAAAAh+QQJCgAPACwAAAAAFAAUAAAEc/DJOVmhmJJRmRRENi1LJxGKKA2LITEeEqon+cCyIMmJZLgS26T3SBAICMnhd0iKjgri6QfMHFUcGkYw6GZVR6i3qw0TpNodzZmRsSeKqwpE0D1k5xNFNuEXkR9IcnllIXJxbxgyKXJGM092cndoNAkpKhEAIfkECQoADwAsAAAAABQAFAAABHjwyTkXoZiSUpc0TDYZRicxnvgUxiEt3hCqEkE+8MGUD0IkksFgxJMUBI8EgYCoCQtA0VIRlSCEQ+lFSssol1sVmKBQjLvjatdKa4p8boo5nBEskb1llO6b9JNMEnY+Wz9rSw+ID2ZxGT4KiVtfNAR4ij1qNAmQKhEAIfkECQoADwAsAAAAABQAFAAABHTwyTkNoZgiVY08SzYNQyctnvgopGR4Q6hKSPvGhzQwhURwutKkIHgUGAyhgEAQJFTIxWWSYAIzSBVilqkyp6rvTyHmip9czWwrQhDYFDI4s2zSmOi5e7J/VNlLblMEaDNMD4crb2s/iFNehkWOfIVcCVcZEQAh+QQJCgAPACwAAAAAFAAUAAAEdPDJOYegmCZUhzxGNhFEJxmh+CCEIg1ekapPQj7wYBzvUj6t0U9C4BAWC89DQBIkVEjDsEaaUpAqDg1jq24ZYLCiasWEGYUtRitir4uZcXnCJFxWpCeQwpr0qVpMLD8EejQ3Nw9jbm8uiV2Hd4krhlsJLioRACH5BAkKAA8ALAAAAAAUABQAAAR48Mk5C6KYpitL6UM2EUT1PUMoPgihdJ+irk9CPh4xnIVRPq7RTyJIAA2Gk4BUXCEPr4ntJkKuODQNibpaeL2K7VD0XYyzKBoWM2DMJuHzRGBgMAySFsEIpLQmbRI2HEt6EntoN1RhaxgtL1RTNAQCh0MIfGgJUSIRACH5BAkKAA8ALAAAAAAUABQAAAR68Mk5VaKYJjQJkUSRdR9YFuWIEIr5COI4Jd7jwaUycHbrTogLYjDwCW6XEXGn8aQwRBlPhqE5qQ+DVqtwPjNbwxc7oE4xhUUZ0x1LEIfF4vD2JJ8HxmSwkNB4RysfCQwxVDU1DwsMayosNiUEDHoyBAI/DwOGWAk+IxEAIfkECQoADwAsAAAAABQAFAAABHjwyTlVopgmNAmRwpdJXicSyighKPmx6pSUHiusxPW0rnbNBM4jRBDoMh6LxiNCNjHC2JIpHVitCuYzcx3cpJRBLIohGAqZ7HaCOBgMB1yOFF5MCgbJTBhCMBgPCQtrZR9/EgYLYiosKYc7C3YqRRKPDwOEGQWAKhEAIfkECQoADwAsAAAAABQAFAAABHfwyTlVopgmNAmRwpdJXicSyighKPmx6pSUHiusxPW0rnbNBM4jRBDoMh6LxiNCNjHC2JIpZaIU1irzKCXFohjBIIXBPjWFwaCAyw0ZlIGhMpDMhAbGYbF4JAxnGQxwfBIHBmwqAwx9hTsGcyoMkY4PBYEjBH0qEQAh+QQJCgAPACwAAAAAFAAUAAAEfPDJOVWimCY0CZHCl0leJxLKKCEo+bHqlJQeK6zE9bSuds0EziNEEOgyHovGI0I2McLYkillohTWKvMoXakQh28ws2AwVAni7TEwFx6IBYUwmMAeBUb9cVgMDAYPCQNRKgtygBIFAykqAwuBiXADeyMLYQ+SDwqFMQSBKhEAIfkECQoADwAsAAAAABQAFAAABHXwyTlVopgmNAmRwpdJXicSyighKPmx6pSUHiusxPW0rnbNBM4jRBDoMh6LxiNCNjHCGKXAqDKkTJS1imUepStVYqBiRSeGxUJMvD0G6peBAsORFuTHwTDoP2ZfIwZzfg8KQTEFBgdveUAxixKFDwiBKgJ5IxEAIfkECQoADwAsAAAAABQAFAAABHPwyTlVopgmNAmRwpdJXicSyighKPmx6pSUHiusxPUwjKldMwLnYeAZbiOPhVLg9ZKizCCWaTqpHqWTh83qqJNhJjEdscSTg8GgSoQIyML6Q6bAcCRDQVIYZB8zXyoDUyUPCkIxCoQPhkExfi5hgjEJKSoRACH5BAEKAA8ALAAAAAAUABQAAAR68Mk5VaKYljEJkcKXSQzTiYQySgOzSN6DiOtTlI83C9J8PQvDBDdJXBI6yWGxOCBWHguFwHyNYiNODUMweIU1T/Tr3YoJv+3kOUKuZmzKYL5KhAi8h2LOc69pMz0DKg8hMx9IaVAfWAoEcRkzKlhINBl4MICKNQmEIxEAOw==');
     position: relative;
@@ -39,52 +40,56 @@
     min-width: 100%;
     display: block;
     .dropdown-item {
-        &:active, &:focus {
+        &:active,
+        &:focus,
+        &:hover {
             outline: 0;
+            background-color: #007bff;
+            color: #fff;
         }
     }
     .dropdown-item-warning {
-    display: block;
-    padding: 0.5rem 1.5rem;
-    margin-bottom: 0;
-    color: #cc0000;
-    white-space: nowrap;
-    text-decoration: none;
-    outline: 0;
-    font-size: 13px;
- }
+        display: block;
+        padding: 0.5rem 1.5rem;
+        margin-bottom: 0;
+        color: #cc0000;
+        white-space: nowrap;
+        text-decoration: none;
+        outline: 0;
+        font-size: 13px;
+    }
 }
 
 .info-tooltip {
-   margin-left: 5px;
+    margin-left: 5px;
 }
 
-.search-term{
+.search-term {
     text-overflow: ellipsis;
     padding-right: 28px;
 }
 
-
 /* RTL CSS */
+
 :host-context(.forms-app-root[dir=rtl]) /deep/ {
-    .dropdown-item{
+    .dropdown-item {
         text-align: right;
-        .item-unique-name{
+        .item-unique-name {
             float: right;
         }
     }
-    .search-term{
+    .search-term {
         padding-right: 10px;
         padding-left: 28px;
     }
 }
 
 .typeahead {
-  max-height: none !important;
-  overflow-y: auto !important;
+    max-height: none !important;
+    overflow-y: auto !important;
 }
 
 .typeahead .dropdown-container {
-  max-height: 250px;
-  overflow-y: scroll;
+    max-height: 250px;
+    overflow-y: scroll;
 }

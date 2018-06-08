@@ -1,20 +1,30 @@
 <ul class="box" *ngFor="let box of data.boxes; let _index = index">
-    <li class="node" 
-    [class.no-right-border]="data.boxes[_index + 1] && box.nodes.length < data.boxes[_index + 1].nodes.length" 
+    <li class="node {{node.type}}" 
+    [class.no-right-border]="data.boxes[_index + 1] && box.nodes.length <= data.boxes[_index + 1].nodes.length" 
     [class.no-left-border]="data.boxes[_index - 1] && box.nodes.length < data.boxes[_index - 1].nodes.length"
     *ngFor="let node of box.nodes; let liIndex = index">
         
-        <div *ngIf="node.name" class="node-control">
-            <app-node [node]="node" [nodeIndex]="liIndex" [box]="box"></app-node>
-        </div> 
+        <ng-container *ngIf="node.type == 'startNode'">
+                <i class="fa fa-play-circle-o fa-2x play"></i>
+        </ng-container>
 
-        <ul class="box" *ngFor="let _box of node.boxes">
-            <li class="node inner-node" *ngFor="let _node of _box.nodes; let _liIndex = index">
-                <div *ngIf="_node.name" class="node-control">
-                    <app-node [node]="_node" [nodeIndex]="_liIndex" [box]="_box"></app-node>
-                </div>
-            </li>
-        </ul>
+        <ng-container *ngIf="node.type == 'endNode'">
+            <i class="fa fa-check fa-2x done"></i>
+        </ng-container>
+
+        <ng-container *ngIf="!node.type">
+            <div *ngIf="!node.boxes || !node.boxes.length" class="node-control">
+                <app-node [node]="node" [nodeIndex]="liIndex" [box]="box" [boxIndex]="_index" [boxes]="data.boxes"></app-node>
+            </div> 
+
+            <ul class="box" *ngFor="let _box of node.boxes; let _boxIndex = index;">
+                <li class="node inner-node" *ngFor="let _node of _box.nodes; let _liIndex = index">
+                    <div *ngIf="_node.name" class="node-control">
+                        <app-node [node]="_node" [nodeIndex]="_liIndex" [box]="_box" [boxIndex]="_boxIndex" [boxes]="node.boxes"></app-node>
+                    </div>
+                </li>
+            </ul>
+        </ng-container>
 
     </li>
 </ul>
