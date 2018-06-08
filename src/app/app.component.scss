@@ -1,8 +1,8 @@
 .graph-container {
     width: 95%;
-    height: auto;
-    overflow-y: scroll;
-    overflow-x: visible;
+    min-height: 800px;
+    overflow-y: hidden;
+    overflow-x: scroll;
     app-graph {
         width: 1800px;
         display: block;
