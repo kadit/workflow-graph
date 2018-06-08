@@ -17,7 +17,7 @@ export class NodeComponent implements OnInit {
   options: Array<string> = [];
   showNodeName = 'false';
   mouseOvered = undefined;
-  data = ["Bang, Bocaranga, République Centrafricaine", "Bang, Koui, République Centrafricaine", "Bang, Koui, République Centrafricaine", "Bang, Ngaoundaye, République Centrafricaine", "Bang, Delanga, OD, India", "Bang, Iran", "Bang, Mondol Kiri, Cambodia", "Bang, Stjørdal, Trøndelag, Norge", "Bang, Kakri, Rapti, Nepal", "Bang, Al Mabien, Upper Nile, South Sudan"];
+  data = ["Chad Foreman", "Chad Muncie", "Chad Noll", "Archie Rooney", "Arnold Davis", "Arnold Jenkins", "Arnold Karras", "Arnold Page", "Arnold Rashad", "Paul Rozelle"];
 
   constructor(private http: Http) { }
 
