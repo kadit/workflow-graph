@@ -1,7 +1,8 @@
 <div class="node-name" [class.mouse-on-node]="mouseOvered" (mouseout)="mouseOvered=false" (mouseover)="mouseOvered=true">
     <i class="fa fa-trash af-icon" (click)="removeNode()"></i>
     <span tabindex="0" [title]="node.name" [hidden]="showNodeName != 'true'" class="node-label">
-        {{node.name}}
+        <span class="status-icon color{{colorCode}}"><span>{{firstLetter}}</span><i></i></span>
+        <span>{{node.name}}</span>
         <i class="fa fa-remove" (click)="clearNode()"></i>
     </span>
     <af-typeahead [hidden]="showNodeName == 'true'" (searchEvent)="search($event)" (selectEvent)="select($event)"  [options]="options"></af-typeahead>

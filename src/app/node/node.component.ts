@@ -17,6 +17,8 @@ export class NodeComponent implements OnInit {
   options: Array<string> = [];
   showNodeName = 'false';
   mouseOvered = undefined;
+  firstLetter = '';
+  colorCode = 0;
   data = ["Chad Foreman", "Chad Muncie", "Chad Noll", "Archie Rooney", "Arnold Davis", "Arnold Jenkins", "Arnold Karras", "Arnold Page", "Arnold Rashad", "Paul Rozelle"];
 
   constructor(private http: Http) { }
@@ -34,6 +36,8 @@ export class NodeComponent implements OnInit {
     this.options = [];
     this.showNodeName = 'true';
     this.mouseOvered = undefined;
+    this.firstLetter = nodeName[0];
+    this.colorCode = parseInt(''+Math.random()*8);
   }
 
   clearNode() {

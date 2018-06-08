@@ -1,9 +1,10 @@
 .node-name {
-    width: 180px;
+    width: 212px;
     display: block;
     top: -44px;
     position: absolute;
     padding: 19px;
+    text-align: left;
     .fa-trash {
         top: 0;
         right: 10px;
@@ -34,22 +35,110 @@
         background-color: #fff;
         display: inline-block;
         border: 1px solid #000;
-        width: 142px;
-        height: 46px;
+        width: 173px;
+        height: 49px;
         vertical-align: middle;
         overflow: hidden;
         line-height: 40px;
         border-width: 3px 1px 1px 2px;
-        border-color: #03A9F4;
+        border-color: #c5c4c4;
+        &:focus{
+            border-color: #007bff;
+        }
         i{
             cursor: pointer;
             position: absolute;
-            top: 24px;
-            right: 22px;
+            top: 28px;
+            right: 23px;
+            background-color: #fff;
+            padding: 10px 0 10px 2px;
         }
         i.fa.fa-remove {
             font-size: 12px;
             color: #b5b5b5;
+        }
+    }
+}
+
+.status-icon {
+    display: inline-block;
+    border-radius: 50%;
+    background-color: #f2f2f2;
+    width: 38px;
+    height: 38px;
+    margin-left: .15rem;
+    margin-top: .15rem;
+    text-align: center;
+    span {
+        color: white;
+    }
+    i {
+        display: none;
+    }
+    &.color0,
+    .icon-gray {
+        background-color: #4B515D;
+    }
+    &.color1,
+    .icon-red {
+        background-color: #ff4444;
+    }
+    &.color2,
+    .icon-orange {
+        background-color: #ffbb33;
+    }
+    &.color3,
+    .icon-green {
+        background-color: #00C851;
+    }
+    &.color4,
+    .icon-lightblue {
+        background-color: #33b5e5;
+    }
+    &.color5,
+    .icon-turquoise {
+        background-color: #2BBBAD;
+    }
+    &.color6,
+    .icon-blue {
+        background-color: #4285F4;
+    }
+    &.color7,
+    .icon-purple {
+        background-color: #aa66cc;
+    }
+    &.status {
+        background-color: white;
+        border-color: lightgray;
+        border-style: solid;
+        border-width: 1px;
+        span {
+            display: none;
+        }
+        i {
+            font-family: "FontAwesome";
+            display: block;
+            font-style: normal;
+            &.fa-check {
+                color: #038719;
+            }
+            &.fa-times {
+                color: #cc0000;
+            }
+        }
+    }
+    &.approved {
+        border-color: #038719;
+        .icon-accept {
+            color: #038719;
+        }
+    }
+    &.denied {
+        background-color: #cc0000;
+        border-color: #cc0000;
+        .icon-warning {
+            color: #ffffff;
+            padding-left: 2px;
         }
     }
 }
