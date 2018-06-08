@@ -8,18 +8,18 @@ ul.box {
         display: block;
         padding: 0;
         border: 1px solid #000;
-        border-top: none;
+        border-bottom: none;
         position: relative;
         height: 100px;
         .node-control {
             padding: 0 19px;
             min-width: 220px;
             position: relative;
-            .node-name {
+            /*.node-name {
                 background-color: #d6d6d6;
                 width: 180px;
                 display: block;
-                top: 75px;
+                top: -44px;
                 position: absolute;
                 z-index: 9;
                 .fa-trash {
@@ -47,12 +47,12 @@ ul.box {
                         bottom: -17px;
                     }
                 }
-            }
+            }*/
         }
     }
-    li:first-child {
+    li:last-child {
         border: none;
-        border-bottom: 1px solid #000;
+        border-top: 1px solid #000;
     }
     li.node.no-right-border {
         border-right: none !important;
@@ -83,7 +83,7 @@ ul.box {
 .play,
 .done {
     position: absolute;
-    top: 77px;
+    top: -24px;
     background: #fff;
     color: #48da26;
     border-radius: 50%;
