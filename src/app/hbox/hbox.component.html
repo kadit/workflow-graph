@@ -1,0 +1,6 @@
+<ul class="box">
+
+    <ng-container *ngFor="let node of box.nodes; let liIndex = index">
+      <app-vbox [node]="node" [liIndex]="liIndex" [hboxes]="hboxes" [hboxIndex]="boxIndex" [hbox]="box"></app-vbox>
+    </ng-container>
+</ul>

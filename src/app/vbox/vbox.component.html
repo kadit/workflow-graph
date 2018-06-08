@@ -1,0 +1,13 @@
+<li class="node" 
+  [class.no-right-border]="hboxes[hboxIndex + 1] && box.nodes.length <= hboxes[hboxIndex + 1].nodes.length" 
+  [class.no-left-border]="hboxes[hboxIndex - 1] && box.nodes.length < hboxes[hboxIndex - 1].nodes.length">
+  
+      <div *ngIf="node.name" class="node-control">
+          <app-node [node]="node" [nodeIndex]="liIndex" [box]="hbox"></app-node>
+      </div>
+
+      <ng-container *ngFor="let _box of node.boxes; let _index = index;">
+          <app-hbox [box]="_box" [boxIndex]="_index" [hboxes]="node.boxes"></app-hbox>
+      </ng-container>
+
+  </li>

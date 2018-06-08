@@ -7,61 +7,64 @@ app-node:first-child li.node {
 app-node app-box li.node {
     border: none !important;
 }
-
+.node-name {
+    z-index: 1;
+}
 ul.box {
+    margin: 0 -3px;
     display: inline-block;
     vertical-align: middle;
     padding: 0;
     text-align: center;
-    li {
-        list-style-type: none;
-        display: block;
-        padding: 0;
-        border: 1px solid #000;
-        border-top: none;
-        position: relative;
-        height: 100px;
-        .node-control {
-            padding: 0 19px;
-            min-width: 220px;
+    app-vbox{
+        li {
+            list-style-type: none;
+            display: block;
+            padding: 0;
+            border: 1px solid #000;
+            border-top: none;
             position: relative;
+            height: 100px;
+            .node-control {
+                padding: 0 19px;
+                min-width: 220px;
+                position: relative;
+            }
         }
-    }
-    li:first-child {
-        border: none;
-        border-bottom: 1px solid #000;
-    }
-    li.node.no-right-border {
-        border-right: none !important;
-    }
-    li.node.no-left-border {
-        border-left: none !important;
-    }
-    /*li.inner-node {
-        border: none !important;
-    }*/
-    .af-icon {
-        position: absolute;
-        color: #b5b5b5;
-        cursor: pointer;
-        display: none;
-    }
-    .mouse-on-node {
+        li.node.no-right-border {
+            border-right: none !important;
+        }
+        li.node.no-left-border {
+            border-left: none !important;
+        }
+        li.inner-node {
+            border: none !important;
+        }
         .af-icon {
-            display: inline;
+            position: absolute;
+            color: #b5b5b5;
+            cursor: pointer;
+            display: none;
+        }
+        .mouse-on-node {
+            .af-icon {
+                display: inline;
+            }
+        }
+        .fa-plus-circle.af-icon {
+            background-color: #fff;
+            border-radius: 50%;
         }
     }
-    .fa-plus-circle.af-icon {
-        background-color: #fff;
-        border-radius: 50%;
+
+    app-vbox:first-child {
+        li {
+            border: none;
+            border-bottom: 1px solid #000;
+        }
     }
 }
 
 .node-name input {
     height: 50px !important;
-}
-
-li.node {
-    border-color: #6c757d !important;
-    border-width: 0.1rem !important;
 }
