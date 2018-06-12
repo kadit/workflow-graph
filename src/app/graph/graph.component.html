@@ -17,6 +17,14 @@
             <i class="fa fa-plus-circle bottom af-icon" (click)="addNode('bottom', box.nodes, liIndex)"></i>
         </span>
 
+        <span class="add-node" *ngIf="node.type == 'startNode'" [hidden]="!node.hovered">
+            <i class="fa fa-plus-circle right af-icon" (click)="addNode('right', data.boxes, _index)"></i>
+        </span>
+
+        <span class="add-node" *ngIf="node.type == 'endNode'" [hidden]="!node.hovered">
+            <i class="fa fa-plus-circle left af-icon" (click)="addNode('left', data.boxes, _index)"></i>
+        </span>
+
         <ng-container *ngIf="!node.type">
             <div *ngIf="!node.boxes || !node.boxes.length" class="node-control">
                 <app-node [node]="node" [nodeIndex]="liIndex" [box]="box" [boxIndex]="_index" [boxes]="data.boxes" isInnerChild="false"></app-node>

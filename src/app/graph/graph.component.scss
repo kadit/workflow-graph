@@ -15,39 +15,6 @@ ul.box {
             padding: 0 19px;
             min-width: 240px;
             position: relative;
-            /*.node-name {
-                background-color: #d6d6d6;
-                width: 180px;
-                display: block;
-                top: -44px;
-                position: absolute;
-                z-index: 9;
-                .fa-trash {
-                    top: -19px;
-                    right: 0;
-                }
-                input {
-                    width: 100%;
-                    height: 50px;
-                    border-radius: 0;
-                }
-                .add-node {
-                    .right {
-                        right: -18px;
-                        top: 17px;
-                    }
-                    .left {
-                        left: -16px;
-                        top: 17px;
-                    }
-                    .top {
-                        top: -17px;
-                    }
-                    .bottom {
-                        bottom: -17px;
-                    }
-                }
-            }*/
         }
     }
     li:last-child {
@@ -120,5 +87,15 @@ ul.box .af-icon {
     .bottom {
         bottom: 55px;
         left: 50%;
+    }
+    .drag-over{
+        font-weight: bold;
+    }
+}
+
+.startNode, .endNode{
+    i.fa.fa-plus-circle.af-icon {
+        top: -9px;
+        left: 48px;
     }
 }
