@@ -31,7 +31,7 @@
         }
     }
     .node-label{
-        font-size: 17px;
+        font-size: 14px;
         background-color: #fff;
         display: inline-block;
         border: 1px solid #000;
@@ -39,7 +39,7 @@
         height: 49px;
         vertical-align: middle;
         overflow: hidden;
-        line-height: 40px;
+        line-height: 32px;
         border-width: 3px 1px 1px 2px;
         border-color: #c5c4c4;
         outline: none;
@@ -65,10 +65,10 @@
     display: inline-block;
     border-radius: 50%;
     background-color: #f2f2f2;
-    width: 38px;
-    height: 38px;
+    width: 32px;
+    height: 32px;
     margin-left: .15rem;
-    margin-top: .15rem;
+    margin-top: .35rem;
     text-align: center;
     span {
         color: white;

@@ -19,13 +19,13 @@
 
         <ng-container *ngIf="!node.type">
             <div *ngIf="!node.boxes || !node.boxes.length" class="node-control">
-                <app-node [node]="node" [nodeIndex]="liIndex" [box]="box" [boxIndex]="_index" [boxes]="data.boxes"></app-node>
+                <app-node [node]="node" [nodeIndex]="liIndex" [box]="box" [boxIndex]="_index" [boxes]="data.boxes" isInnerChild="false"></app-node>
             </div> 
 
             <ul class="box innerbox" *ngFor="let _box of node.boxes; let _boxIndex = index;">
                 <li class="node inner-node" *ngFor="let _node of _box.nodes; let _liIndex = index">
                     <div *ngIf="_node.name" class="node-control">
-                        <app-node [node]="_node" [nodeIndex]="_liIndex" [box]="_box" [boxIndex]="_boxIndex" [boxes]="node.boxes"></app-node>
+                        <app-node [node]="_node" [nodeIndex]="_liIndex" [box]="_box" [boxIndex]="_boxIndex" [boxes]="node.boxes" isInnerChild="true"></app-node>
                     </div>
                 </li>
             </ul>

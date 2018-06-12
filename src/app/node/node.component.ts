@@ -13,6 +13,7 @@ export class NodeComponent implements OnInit {
   @Input() box: any;
   @Input() boxIndex: number;
   @Input() boxes: any[];
+  @Input() isInnerChild: string;
 
   options: Array<string> = [];
   showNodeName = 'false';
@@ -28,7 +29,7 @@ export class NodeComponent implements OnInit {
 
   //Search method
   search(searchTerm) {
-    this.options = this.data.filter((i) =>  i.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1 ? true : false );       
+    this.options = this.data.filter((i) => i.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1 ? true : false);
   }
 
   select(nodeName) {
@@ -37,7 +38,7 @@ export class NodeComponent implements OnInit {
     this.showNodeName = 'true';
     this.mouseOvered = undefined;
     this.firstLetter = nodeName[0];
-    this.colorCode = parseInt(''+Math.random()*8);
+    this.colorCode = parseInt('' + Math.random() * 8);
   }
 
   clearNode() {
@@ -80,6 +81,12 @@ export class NodeComponent implements OnInit {
 
   removeNode() {
     this.box.nodes.splice(this.nodeIndex, 1);
+    if (this.isInnerChild === 'true') {
+      this.boxes.splice(this.boxIndex, 1);
+      if(this.boxes.length <= 1){
+        this.boxes.length = 0;
+      }
+    }
   }
 
 }

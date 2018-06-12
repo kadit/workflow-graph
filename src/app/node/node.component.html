@@ -1,5 +1,4 @@
 <div class="node-name" draggable="true" [class.mouse-on-node]="mouseOvered" (mouseout)="mouseOvered=false" (mouseover)="mouseOvered=true">
-    
     <i class="fa fa-trash af-icon" (click)="removeNode()"></i>
     <span tabindex="0" [title]="node.name" [hidden]="showNodeName != 'true'" class="node-label">
         <span class="status-icon color{{colorCode}}"><span>{{firstLetter}}</span><i></i></span>
