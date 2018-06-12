@@ -1,8 +1,8 @@
-<ul class="box" *ngFor="let box of data.boxes; let _index = index">
+<ul class="box" *ngFor="let box of data.boxes; let _index = index" (mouseout)="onUlMouseOut(box)">
     <li class="node {{node.type}}" 
     [class.no-right-border]="data.boxes[_index + 1] && box.nodes.length <= data.boxes[_index + 1].nodes.length" 
     [class.no-left-border]="data.boxes[_index - 1] && box.nodes.length < data.boxes[_index - 1].nodes.length"
-    *ngFor="let node of box.nodes; let liIndex = index">
+    *ngFor="let node of box.nodes; let liIndex = index" (mouseover)="onLiHover(node, box.nodes)">
         
         <ng-container *ngIf="node.type == 'startNode'">
                 <i class="fa fa-play-circle-o fa-2x play"></i>
@@ -12,12 +12,17 @@
             <i class="fa fa-check fa-2x done"></i>
         </ng-container>
 
+        <span class="add-node" *ngIf="node.type != 'startNode' && node.type != 'endNode'" [hidden]="!node.hovered">
+            <i class="fa fa-plus-circle top af-icon" (click)="addNode('top', box.nodes, liIndex)"></i>
+            <i class="fa fa-plus-circle bottom af-icon" (click)="addNode('bottom', box.nodes, liIndex)"></i>
+        </span>
+
         <ng-container *ngIf="!node.type">
             <div *ngIf="!node.boxes || !node.boxes.length" class="node-control">
                 <app-node [node]="node" [nodeIndex]="liIndex" [box]="box" [boxIndex]="_index" [boxes]="data.boxes"></app-node>
             </div> 
 
-            <ul class="box" *ngFor="let _box of node.boxes; let _boxIndex = index;">
+            <ul class="box innerbox" *ngFor="let _box of node.boxes; let _boxIndex = index;">
                 <li class="node inner-node" *ngFor="let _node of _box.nodes; let _liIndex = index">
                     <div *ngIf="_node.name" class="node-control">
                         <app-node [node]="_node" [nodeIndex]="_liIndex" [box]="_box" [boxIndex]="_boxIndex" [boxes]="node.boxes"></app-node>

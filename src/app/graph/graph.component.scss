@@ -104,3 +104,21 @@ ul.box {
 .endNode {
     width: 80px;
 }
+
+ul.box .af-icon {
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline;
+    z-index: 1;
+}
+.add-node {
+    display: inline;
+    .top {
+        top: -44px;
+        left: 50%;
+    }
+    .bottom {
+        bottom: 55px;
+        left: 50%;
+    }
+}

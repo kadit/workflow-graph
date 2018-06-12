@@ -1,4 +1,5 @@
-<div class="node-name" [class.mouse-on-node]="mouseOvered" (mouseout)="mouseOvered=false" (mouseover)="mouseOvered=true">
+<div class="node-name" draggable="true" [class.mouse-on-node]="mouseOvered" (mouseout)="mouseOvered=false" (mouseover)="mouseOvered=true">
+    
     <i class="fa fa-trash af-icon" (click)="removeNode()"></i>
     <span tabindex="0" [title]="node.name" [hidden]="showNodeName != 'true'" class="node-label">
         <span class="status-icon color{{colorCode}}"><span>{{firstLetter}}</span><i></i></span>
@@ -7,9 +8,9 @@
     </span>
     <af-typeahead [hidden]="showNodeName == 'true'" (searchEvent)="search($event)" (selectEvent)="select($event)"  [options]="options"></af-typeahead>
     <span class="add-node">
-        <i class="fa fa-plus-circle top af-icon" (click)="addNode('top')"></i>
+        <!--i class="fa fa-plus-circle top af-icon" (click)="addNode('top')"></i-->
         <i class="fa fa-plus-circle right af-icon" (click)="addNode('right')"></i>
-        <i class="fa fa-plus-circle bottom af-icon" (click)="addNode('bottom')"></i>
+        <!--i class="fa fa-plus-circle bottom af-icon" (click)="addNode('bottom')"></i-->
         <i class="fa fa-plus-circle left af-icon" (click)="addNode('left')"></i>
     </span>
 </div>

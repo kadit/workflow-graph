@@ -14,4 +14,25 @@ export class GraphComponent implements OnInit {
   ngOnInit() {
   }
 
+  addNode(where: 'top' | 'bottom', nodes: any[], nodeIndex: number) {
+    switch (where) {
+      case 'top':
+        nodes.splice(nodeIndex ? nodeIndex - 1 : 0, 0, { "name": "Node " + Date.now() });
+        break;
+
+      case 'bottom':
+        nodes.splice(nodeIndex + 1, 0, { "name": "Node " + Date.now() });
+        break;
+    }
+  }
+
+  onLiHover(node: any, nodes: any[]) {
+    nodes.forEach(node => node.hovered = false);
+    node.hovered = true;
+  }
+
+  onUlMouseOut(box: any){
+    box.nodes.forEach(node => node.hovered = false);
+  }
+
 }
