@@ -12,9 +12,9 @@
             <i class="fa fa-check fa-2x done"></i>
         </ng-container>
 
-        <span class="add-node" *ngIf="node.type != 'startNode' && node.type != 'endNode'" [hidden]="!node.hovered">
-            <i class="fa fa-plus-circle top af-icon" (click)="addNode('top', box.nodes, liIndex)"></i>
-            <i class="fa fa-plus-circle bottom af-icon" (click)="addNode('bottom', box.nodes, liIndex)"></i>
+        <span class="add-node" *ngIf="node.type != 'startNode' && node.type != 'endNode'" [hidden]="!node.hovered && !dragStarted">
+            <i class="fa fa-plus-circle top af-icon" (click)="addNode('top', box.nodes, liIndex)" (dragover)="$event.preventDefault()" (dragenter)="dragenter($event)" (dragleave)="dragleave($event)" (drop)="drop($event, 'top', box.nodes, liIndex)" dragover="dragover($event)"></i>
+            <i class="fa fa-plus-circle bottom af-icon" (click)="addNode('bottom', box.nodes, liIndex)" (dragover)="$event.preventDefault()" (dragenter)="dragenter($event)" (dragleave)="dragleave($event)" (drop)="drop($event, 'bottom', box.nodes, liIndex)" dragover="dragover($event)"></i>
         </span>
 
         <span class="add-node" *ngIf="node.type == 'startNode'" [hidden]="!node.hovered">
@@ -27,13 +27,13 @@
 
         <ng-container *ngIf="!node.type">
             <div *ngIf="!node.boxes || !node.boxes.length" class="node-control">
-                <app-node [node]="node" [nodeIndex]="liIndex" [box]="box" [boxIndex]="_index" [boxes]="data.boxes" isInnerChild="false"></app-node>
+                <app-node [node]="node" [nodeIndex]="liIndex" [box]="box" [boxIndex]="_index" [boxes]="data.boxes" isInnerChild="false" (dragStartEvent)="dragStartEvent(nodeName)"></app-node>
             </div> 
 
             <ul class="box innerbox" *ngFor="let _box of node.boxes; let _boxIndex = index;">
                 <li class="node inner-node" *ngFor="let _node of _box.nodes; let _liIndex = index">
                     <div *ngIf="_node.name" class="node-control">
-                        <app-node [node]="_node" [nodeIndex]="_liIndex" [box]="_box" [boxIndex]="_boxIndex" [boxes]="node.boxes" isInnerChild="true"></app-node>
+                        <app-node [node]="_node" [nodeIndex]="_liIndex" [box]="_box" [boxIndex]="_boxIndex" [boxes]="node.boxes" isInnerChild="true" (dragStartEvent)="dragStartEvent(nodeName)"></app-node>
                     </div>
                 </li>
             </ul>

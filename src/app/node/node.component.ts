@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Http } from '@angular/http';
 
 @Component({
@@ -14,6 +14,8 @@ export class NodeComponent implements OnInit {
   @Input() boxIndex: number;
   @Input() boxes: any[];
   @Input() isInnerChild: string;
+
+  @Output() dragStartEvent: EventEmitter<string> = new EventEmitter();
 
   options: Array<string> = [];
   showNodeName = 'false';
@@ -86,6 +88,20 @@ export class NodeComponent implements OnInit {
       if(this.boxes.length <= 1){
         this.boxes.length = 0;
       }
+    }
+  }
+
+  dragstart(event){
+    //event.effectAllowed = "move";
+    const img = new Image(); 
+    img.src = 'assets/drag-img.gif'; 
+    event.dataTransfer.setDragImage(img, 0, 0);
+    this.dragStartEvent.next(this.node.name);
+  }
+
+  dragend(event){
+    if(event.dataTransfer.dropEffect === 'move'){
+      this.removeNode();
     }
   }
 
