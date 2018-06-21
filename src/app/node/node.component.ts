@@ -92,7 +92,7 @@ export class NodeComponent implements OnInit {
   }
 
   dragstart(event){
-    //event.effectAllowed = "move";
+    event.dataTransfer.effectAllowed = "move";
     const img = new Image(); 
     img.src = 'assets/drag-img.gif'; 
     event.dataTransfer.setDragImage(img, 0, 0);

@@ -3,6 +3,7 @@ ul.box {
     vertical-align: middle;
     padding: 0;
     text-align: center;
+    margin-top: 1px;
     li {
         list-style-type: none;
         display: block;
@@ -11,6 +12,7 @@ ul.box {
         border-bottom: none;
         position: relative;
         height: 100px;
+        text-align: left;
         .node-control {
             padding: 0 19px;
             min-width: 240px;
